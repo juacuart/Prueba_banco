@@ -1,0 +1,16 @@
+{
+    "conexion":
+        {
+            "driver" :"{Microsoft Access Driver (*.mdb, *.accdb)}",
+            "db_file":"C:/Users/juacuart/Documents/Material_de_trabajo/Prueba/Prueba_banco",
+            "source" :"bases_datos.accdb"
+        },
+    "consultas_8_am":
+        {
+        "ruta_raiz" : "C:/Users/juacuart/Documents/Material_de_trabajo/Prueba/Prueba_banco/SQL/8am"
+        },
+    "consultas_10_am":
+        {
+        "ruta_raiz" : "C:/Users/juacuart/Documents/Material_de_trabajo/Prueba/Prueba_banco/SQL/10am"
+        }
+}
