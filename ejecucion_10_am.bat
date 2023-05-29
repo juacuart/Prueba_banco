@@ -12,4 +12,3 @@ REM Desactivar el entorno virtual
 echo Desactivando el entorno virtual...
 deactivate
 
-pause
