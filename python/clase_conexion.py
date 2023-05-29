@@ -76,6 +76,7 @@ class EjecutarSQL:
         sys.stdout = log_file
         fecha_actual = datetime.now()
         print('fecha actual: ', fecha_actual.strftime("%Y%m%d %H:%M:%S"))
+        print('Inicia ejecucion')
         sys.stdout = stdout
         log_file.close()
     
