@@ -5,7 +5,7 @@ import os
 import sys
 from datetime import datetime
 
-#CLASE DE CONEXION A MICROSOFT ACCESS
+#CLASE DE CONEXION A MICROSOFT ACCESSs
 class ConexionAccess:
     clave_conexion = "conexion"
 #CONECTAR CON RUTA JSON
