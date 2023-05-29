@@ -1,6 +1,10 @@
 #LIBRERIAS 
 import pyodbc 
 import json 
+import os
+import sys
+from datetime import datetime
+
 #CLASE DE CONEXION A MICROSOFT ACCESS
 class ConexionAccess:
     clave_conexion = "conexion"
@@ -42,16 +46,45 @@ class ConexionAccess:
         except:
             raise 'ha ocurrido un error'
 
-        
-"""
-ruta = os.getcwd()
-archivo_json = '\parametros.json'
-datos = ConexionAccess(ruta,archivo_json)
-cursor, _ = datos.conectar()
-"""
-"""
-cursor.execute('select * from Tarjetas')
-rows = cursor.fetchall()
-for row in rows:
-    print(row)
-"""
+
+class EjecutarSQL:
+#CONECTAR CON RUTA JSON
+    def __init__(self,ruta_sql,json_archivo,cursor,clave_consulta):
+        self.ruta_sql = ruta_sql
+        self.json_archivo = json_archivo
+        self.cursor = cursor
+        self.clave_consulta = clave_consulta
+#LERR ARCHIVO JSON   
+    def __leerJson__(self):
+        with open(f'{self.ruta_sql}{self.json_archivo}') as archivo:
+            data = json.load(archivo)
+        return data 
+#OBTENER EL DICCIONARIO DONDE ESTAN LOS PARAMETROS DE CONEXION
+    def __ObtenerParams__(self):
+        params = self.__leerJson__()[self.clave_consulta]
+        return params
+    
+    def __ExtraerConsultas__(self):
+        rutas_sql = self.__ObtenerParams__()
+        rutas_sql = rutas_sql['ruta_raiz']
+        sql = sorted(os.listdir(rutas_sql))
+        return rutas_sql,sql 
+    
+    def __Logs__(self):
+        stdout = sys.stdout
+        log_file = open('archivo.log','w')
+        sys.stdout = log_file
+        fecha_actual = datetime.now()
+        print('fecha actual: ', fecha_actual.strftime("%Y%m%d %H:%M:%S"))
+        sys.stdout = stdout
+        log_file.close()
+    
+    def EjecutarSQL(self):
+        rutas_sql,sql = self.__ExtraerConsultas__()
+        self.__Logs__()
+        for i in sql:
+            with open('{}/{}'.format(rutas_sql,i), 'r') as archivo:
+                contenido = archivo.read()
+                print(contenido)
+                self.cursor.execute(contenido)
+    

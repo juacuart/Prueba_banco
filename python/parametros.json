@@ -2,17 +2,15 @@
     "conexion":
         {
             "driver" :"{Microsoft Access Driver (*.mdb, *.accdb)}",
-            "db_file":"C:/Users/juacuart/Documents/Material_de_trabajo/Prueba/prueba_dp_mdp",
+            "db_file":"C:/Users/juacuart/Documents/Material_de_trabajo/Prueba/Prueba_banco",
             "source" :"bases_datos.accdb"
         },
-    "consultas":
+    "consultas_8_am":
         {
-            "tarjetas_activas" : "C:/Users/juacuart/Documents/Material_de_trabajo/Prueba/prueba_dp_mdp/SQL/tarjetas_activas.sql",
-            "punto_1"          : "C:/Users/juacuart/Documents/Material_de_trabajo/Prueba/prueba_dp_mdp/SQL/punto_1.sql",
-            "punto_2"          : "C:/Users/juacuart/Documents/Material_de_trabajo/Prueba/prueba_dp_mdp/SQL/punto_2.sql",
-            "punto_3"          : "C:/Users/juacuart/Documents/Material_de_trabajo/Prueba/prueba_dp_mdp/SQL/punto_3.sql",
-            "punto_4"          : "C:/Users/juacuart/Documents/Material_de_trabajo/Prueba/prueba_dp_mdp/SQL/punto_4.sql",
-            "punto_5"          : "C:/Users/juacuart/Documents/Material_de_trabajo/Prueba/prueba_dp_mdp/SQL/punto_5.sql",
-            "punto_6"          : "C:/Users/juacuart/Documents/Material_de_trabajo/Prueba/prueba_dp_mdp/SQL/punto_6.sql"   
+        "ruta_raiz" : "C:/Users/juacuart/Documents/Material_de_trabajo/Prueba/Prueba_banco/SQL/8am"
+        },
+    "consultas_10_am":
+        {
+        "ruta_raiz" : "C:/Users/juacuart/Documents/Material_de_trabajo/Prueba/Prueba_banco/SQL/10am"
         }
 }
